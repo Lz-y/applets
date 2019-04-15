@@ -1,0 +1,95 @@
+<view class="container">
+  <view class='header'>
+    <view class='address' catchtap='toAddress'>
+      <text>{{address}}</text>
+      <i-icon type='unfold'></i-icon>
+    </view>
+    <view class='search'>
+      <i-input value="{{value}}" maxlength='200' i-class='pt-input' placeholder="搜索你想要的兼职" bindchange='change'/>
+      <view class='result'>
+        <view class='result-item' wx:for='{{result}}' wx:key='index' data-postid='{{item.post_id}}' catchtap='clickRes'>{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <swiper-image data="{{focuses}}"></swiper-image>
+  <i-panel title='志愿者' i-title-class='i-title' hide-border>
+    <view class='pt-more' slot='more' data-item='travels'  catchtap='toLookMore'>
+      <text>查看更多</text>
+      <i-icon type='enterinto_fill' size='14'></i-icon>
+    </view>
+    <view class='pt-content'>
+      <view class='travels' wx:for='{{travels}}' wx:key='index' wx:if='{{index<2}}' data-postid='{{item.post_id}}' catchtap='toDetail'>
+        <image class='pt-img' src='{{item.image}}'></image>
+        <text class='title'>{{item.title}}</text>
+        <text class='subTitle'>{{item.sub_title}}</text>
+      </view>
+    </view>
+  </i-panel>
+  <i-panel title='体验测评' i-title-class='i-title' hide-border>
+    <view class='pt-more' slot='more' data-item='experices' catchtap='toLookMore'>
+      <text>查看更多</text>
+      <i-icon type='enterinto_fill' size='14'></i-icon>
+    </view>
+    <view class='pt-content'>
+      <view class='experices' wx:for='{{experices}}' wx:key='index' wx:if='{{index<2}}' data-postid='{{item.post_id}}' catchtap='toDetail'>
+        <image class='pt-img' src='{{item.image}}'></image>
+        <text class='title'>{{item.title}}</text>
+        <text class='subTitle'>{{item.sub_title}}</text>
+      </view>
+    </view>
+  </i-panel>
+  <i-panel title='新奇兼职' i-title-class='i-title' hide-border>
+    <view class='pt-content'>
+      <scroll-view class='scroll' scroll-x='true'>
+        <view class='list-item' wx:for='{{novels}}' wx:key='index' data-postid='{{item.post_id}}' catchtap='toDetail'>
+          <image src='{{item.image}}' style='width:136px;height:120px;'></image>
+          <view class='title-area'>
+            <view class='title'>{{item.title}}</view>
+            <view style='font-size:10px'>{{item.sub_title}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </i-panel>
+  <i-panel title='宅家赚钱' i-title-class='i-title' hide-border>
+    <view class='pt-more' slot='more' catchtap='refresh'>
+      <text>换一换</text>
+      <i-icon type='refresh' size='14'></i-icon>
+    </view>
+    <view class='pt-content pt-home'>
+      <view class='home-list'>
+        <view class='home-item' wx:for='{{home}}' wx:key='index' data-postid='{{item.post_id}}' catchtap='toDetail'>
+          <view class="pt-title">
+            <text class='title'>{{item.title}}</text>
+            <text class='price'>{{item.sub_title}}</text>
+          </view>
+          <view class="pt-detail">
+            <i-icon type='success_fill'></i-icon>
+            <text>招聘{{item.num}}人</text>
+          </view>
+        </view>
+      </view>
+      <!-- <scroll-view class='scroll' scroll-x='true' style='height:60px;'>
+        <view class='list-item' wx:for='{{home.subResources}}' wx:key='index' data-postid='{{item.resourceId}}' catchtap='toDetail'>
+          <image src='{{item.image}}' style='width:136px;height:60px;'></image>
+          <view class='home-title-area'>
+            <view>{{item.title}}</view>
+            <view style='font-size:10px;color:#888;'>{{item.applyDesc}}</view>
+          </view>
+        </view>
+      </scroll-view> -->
+    </view>
+  </i-panel>
+  <i-panel title='精品兼职' i-title-class='i-title' hide-border>
+    <view class='pt-content pt-recommend'>
+      <view class='recommends-item' wx:for='{{recommends}}' wx:key='index' data-postid='{{item.post_id}}' catchtap='toDetail'>
+        <image src='{{item.image}}' style='width:100%;height:140px;'></image>
+        <view class='desc'>
+          <view class='title'>{{item.title}}</view>
+          <view class='hr'></view>
+          <view class='subTitle'>{{item.sub_title}}</view>
+        </view>
+      </view>
+    </view>
+  </i-panel>
+</view>

@@ -1,0 +1,144 @@
+.container{
+  font-size:14px;
+  background-color:#f1f1f1;
+}
+.header{
+  padding:8px 10px 0 10px;
+  overflow:hidden;
+  background:#fff;
+  box-sizing:border-box;
+}
+.left{
+  float:left;
+  width:75%;
+  padding-bottom:14px;
+  box-sizing:border-box;
+  line-height:30px;
+}
+.title{
+  font-size:15px;
+  line-height:30px;
+  font-weight:500;
+}
+.count{
+  font-size:12px;
+}
+.right{
+  float:right;
+  width:25%;
+  line-height:30px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  border:1px solid #f1f1f1;
+  box-sizing:border-box;
+  color:#fd831f;
+}
+.down{
+  clear:both;
+  display:flex;
+  align-items:center;
+  border-top:1px solid #f1f1f1;
+  height:40px;
+  line-height:40px;
+}
+.address{
+  margin-left:10px;
+  font-size:12px;
+}
+.price{
+  color:#fd831f;
+  font-size:12px;
+}
+.main{
+  margin-bottom:43px;
+  box-sizing:border-box;
+}
+.item{
+  line-height: 1.8;
+  font-weight:400;
+}
+.desc, .merchant-info, .registered{
+  margin-top:8px;
+  padding:8px 10px;
+  background:#fff;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.date-time{
+  line-height:24px;
+  margin:10px 0;
+}
+.info-list{
+  display:flex;
+  align-items:center;
+}
+.require{
+  display:flex;
+  color:#fc5411;
+}
+.logo{
+  width:36px;
+  height:36px;
+}
+.registered{
+  margin-bottom:20px;
+}
+.scroll{
+  height:60px;
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.user{
+  display:inline-block;
+  margin:4px;
+}
+.footer{
+  display:flex;
+  position:fixed;
+  bottom:0;
+  left:0;
+  right: 0;
+  background:#fff;
+  box-sizing:border-box;
+  z-index:999;
+  box-shadow:0 -1px 2px #e6e6e6;
+}
+.footer image{
+  height:18px;
+  width:18px;
+}
+.shareCode, .shareview {
+  width:15%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  font-size:12px;
+  padding: 4px 0;
+}
+.applybtn{
+  width:70%;
+  text-align:center;
+  height:43px;
+  line-height:43px;
+  background:#0c8;
+  color: #fff;
+}
+.gray{
+  background: gray;
+}
+button[plain]{
+  border: 0;
+  background: #fff;
+  height: 43px;
+  line-height:1.4;
+  overflow: hidden;
+}
+.none{
+  background: #fff;
+}

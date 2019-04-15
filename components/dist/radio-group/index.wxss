@@ -1,0 +1,2 @@
+.i-radio-group{display:flex;align-items:center;font-size:14px;line-height:1.4;position:relative;padding:7px 15px;color:#495060;
+}.i-radio-group-title{color:#495060;min-width:65px;padding-right:10px;display:inline-block;}.i-radio-group-body{display:inline-block}

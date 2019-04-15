@@ -1,0 +1,32 @@
+.container{
+  background:#f6f6f6;
+  font-weight:400px;
+  color:#888;
+}
+.pt-apply-item{
+  color:#36383d;
+  background:#fff;
+  padding:8px 10px;
+  overflow:hidden;
+  border-bottom:1px solid #f1f1f1;
+  box-sizing: border-box;
+}
+.pt-title{
+  font-weight:500;
+  font-size:15px;
+  line-height:24px;
+  display:flex;
+  justify-content:space-between;
+}
+.status{
+  color:#fd831f;
+  font-size:12px;
+}
+.pt-method-address{
+  font-size:12px;
+  line-height:24px;
+}
+.separator{
+  display:inline-block;
+  margin:0 4px;
+}

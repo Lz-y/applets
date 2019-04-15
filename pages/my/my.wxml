@@ -1,0 +1,52 @@
+<view class='container'>
+  <!-- 用户登录 -->
+  <view class='y-user' wx:if='{{isLogin}}'>
+    <view class='user-info' catchtap='toSelfInfo'>
+      <view class='user-avatar'>
+        <open-data type='userAvatarUrl'></open-data>
+      </view>
+      <view class='user-nickName-school'>
+        <view>{{user.name || '暂无'}}</view>
+        <text>{{user.school || '暂无学校信息'}}</text>
+      </view>
+      <i-icon type="enter" color='#dddee1' i-class="enter"></i-icon>
+    </view>
+    <i-panel title='我的报名' i-class='pt-panel' i-title-class='i-title' hide-border>
+      <view class='pt-content'>
+        <view class='pt-item' catchtap='toApply'>
+          <text class='apply'></text>
+          <text>已报名</text>
+        </view>
+        <view class='pt-item' catchtap='toRecord'>
+          <text class='record'></text>
+          <text>兼职记录</text>
+        </view>
+      </view>
+    </i-panel>
+    <i-cell-group i-class='pt-list'>
+      <i-cell title="我的收藏" is-link url='../collect/collect'>
+        <view slot='icon'>
+          <i-icon type='collection' size='24' color='#fcba09'></i-icon>
+        </view>
+      </i-cell>
+      <i-cell title="反馈留言" is-link url='../feedback/feedback'>
+        <view slot='icon'>
+          <i-icon type='feedback' size='24' color='#0c8'></i-icon>
+        </view>
+      </i-cell>
+      <i-cell title="用户设置" is-link url='/pages/setting/setting'>
+        <view slot='icon'>
+          <i-icon type='setup' size='24' color='#f98'></i-icon>
+        </view>
+      </i-cell>
+    </i-cell-group>
+  </view>
+  <!-- 用户没有登录 -->
+  <view class='n-user' wx:else>
+    <text>登录查看更多信息</text>
+    <i-button shape="circle" size="small" bind:click='toLogin'>手机号登录</i-button>
+  </view>
+  <view class='contact'>
+    <contact-button size='27' type='default-light' session-from='weapp'></contact-button>
+  </view>
+</view>

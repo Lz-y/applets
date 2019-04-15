@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-panel": "../../components/dist/panel/index",
+    "i-button": "../../components/dist/button/index",
+    "i-input": "../../components/dist/input/index",
+    "i-toast": "../../components/dist/toast/index"
+  },
+  "navigationBarTitleText": "留言反馈"
+}

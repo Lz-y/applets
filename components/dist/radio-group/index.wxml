@@ -1,0 +1,6 @@
+<view class="i-class i-radio-group">
+  <view class='i-radio-group-title' wx:if='{{title}}'>{{title}}</view>
+  <view class='i-radio-group-body'>
+    <slot></slot>
+  </view>
+</view>

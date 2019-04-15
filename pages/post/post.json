@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../components/dist/tabs/index",
+    "i-tab": "../../components/dist/tab/index",
+    "i-icon": "../../components/dist/icon/index",
+    "i-radio-group": "../../components/dist/radio-group/index",
+    "i-radio": "../../components/dist/radio/index"
+  },
+  "navigationBarTitleText": "找兼职",
+  "enablePullDownRefresh": true
+}

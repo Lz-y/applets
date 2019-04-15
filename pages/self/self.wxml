@@ -1,0 +1,26 @@
+<view class='container'>
+  <i-panel>
+    <i-input title='姓名' value="{{user.name}}" maxlength='60' placeholder='请输入您的姓名' bindchange='inputName'></i-input>
+    <i-radio-group title='性别' current="{{user.gender}}" bindchange='selectSex'>
+      <i-radio color='#0c8' value="0" label='男生'></i-radio>
+      <i-radio color='#0c8' value="1" label='女生'></i-radio>
+    </i-radio-group>
+    <i-input title='年龄' value="{{user.age}}" maxlength='3' placeholder='请填写您的年龄' bindchange='inputAge'></i-input>
+    <i-input title='手机号' value="{{user.tel}}" maxlength='11' placeholder='请输入您的手机号' bindblur='blurPhone'></i-input>
+    <i-input title='现居地' value="{{user.address}}" maxlength='120' placeholder='请输入您的现在居住的地址' bindchange='inputAdress'></i-input>
+    <i-input title='邮箱' value="{{user.email}}" maxlength='18' placeholder='请输入您的邮箱' bindblur='inputEmail'></i-input>
+    <i-input title='在读学校' value="{{user.school}}" maxlength='120' placeholder='请输入您的学校' bindchange='inputSchool'></i-input>
+    <view class='education'>
+      <view class='title'>学历</view>
+      <picker value='{{index}}' range='{{education}}' bindchange='selectEdu'>
+        <view class='content'>
+          <text wx:if='{{user.education}}'>{{user.education}}</text>
+          <text wx:else>请选择您的学历</text>
+        </view>
+      </picker>
+    </view>
+    <i-input title='专业' value="{{user.major}}" maxlength='60' placeholder='请输入您的专业' bindchange='inputMajor'></i-input>
+    <i-input type='textarea' title='自我介绍' value="{{user.brief}}" maxlength='140' placeholder='请输入您的自我介绍' bindchange='inputBrief'></i-input>
+  </i-panel>
+  <i-button type='success' size="small" bind:click='save'>保存</i-button>
+</view>

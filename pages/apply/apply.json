@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "i-tabs": "../../components/dist/tabs/index",
+    "i-tab": "../../components/dist/tab/index",
+    "i-icon": "../../components/dist/icon/index"
+  },
+  "navigationBarTitleText": "报名单列表"
+}

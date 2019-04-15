@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-panel": "../../components/dist/panel/index",
+    "i-button": "../../components/dist/button/index",
+    "i-input": "../../components/dist/input/index",
+    "i-radio-group": "../../components/dist/radio-group/index",
+    "i-radio": "../../components/dist/radio/index"
+  },
+  "navigationBarTitleText": "简历"
+}

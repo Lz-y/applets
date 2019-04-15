@@ -1,0 +1,28 @@
+<view class='container'>
+  <view class='no-data' wx:if='{{dataList.length === 0}}'>
+    <text class='no-data-icon'></text>
+    <text>暂无收藏</text>
+  </view>
+  <view class='y-data' wx:else>
+    <block wx:for='{{dataList}}' wx:key='index'>
+      <view class='pt-collection-item' data-postId='{{item.postId}}' catchtap='toDetail'>
+        <view class="pt-collection-content">
+          <view class="pt-title">
+            <text class='title'>{{item.title}}</text>
+            <text class='price'>{{item.salary}}</text>
+          </view>
+          <view class="pt-detail">
+            <view class='pt-time'>
+              <i-icon type='time_fill' color='#999' size='16'></i-icon>
+              <text>{{item.job_date}}</text>
+            </view>
+            <view class='pt-location'>
+              <i-icon type='coordinates_fill' size='16'></i-icon>
+              <text>{{item.job_address}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

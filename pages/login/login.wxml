@@ -1,0 +1,17 @@
+<view class='container'>
+  <i-tabs current="{{current}}" color="#0c8" bindchange="handleChange">
+    <i-tab key="login" title="用户登录"></i-tab>
+    <i-tab key="reg" title="注册用户"></i-tab>
+  </i-tabs>
+  <i-panel style='margin-top:50px' wx:if='{{current === "login"}}'>
+    <i-input title='手机号' value="{{user.account}}" maxlength='200' i-class='part-time' placeholder="请输入手机号" bind:change='inputAccount'/>
+    <i-input title='密码' type='password' value="{{user.psw}}" maxlength='200' i-class='part-time' placeholder="请输入密码" bind:change='inputPsw'/>
+    <i-button type="success" shape="circle" size="small" bind:click='login'>登录</i-button>
+  </i-panel>
+  <i-panel style='margin-top:50px' wx:else>
+    <i-input title='手机号' value="{{reg.account}}" maxlength='200' i-class='part-time' placeholder="请输入手机号" bind:change='inputAccount'/>
+    <i-input title='密码' type='password' value="{{reg.psw}}" maxlength='200' i-class='part-time' placeholder="请输入密码" bind:change='inputPsw'/>
+    <i-button type="success" shape="circle" size="small" bind:click='reg'>注册</i-button>
+  </i-panel>
+  <i-toast id='toast'></i-toast>
+</view>

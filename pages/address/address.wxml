@@ -1,0 +1,4 @@
+<view class='container' style='height:100vh'>
+  <map id='map' style='width:100%;height:100%;' latitude='{{latitude}}' longitude='{{longitude}}' subkey='{{subkey}}' markers='{{markers}}' scale='{{scale}}' show-compass='{{compass}}' show-location='{{location}}'>
+  </map>
+</view>

@@ -1,0 +1,7 @@
+.container{
+  height:100vh;
+}
+.label{
+  text-align:center;
+  margin-bottom:10px;
+}

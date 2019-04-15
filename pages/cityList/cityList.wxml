@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="position">
+    <view class="title">当前定位</view>
+    <view class="posiconte">
+      <i-icon type='location' size='18'></i-icon>
+      <text>{{townName}}</text>
+    </view>
+  </view>
+  <view class="hotcity">
+    <view class="title">热门城市</view>
+    <view class="ul">
+      <view catchtap="jumpindex" class="li" data-hot='{{item}}' wx:for="{{hotcityList}}" wx:key="{{index}}">{{item.townName}}</view>
+    </view>
+  </view>
+  <i-index height="100%" bind:change="onChange">
+    <i-index-item wx:for="{{ cities }}" wx:key="{{index}}" name="{{item.key}}">
+      <view class="i-index-item" wx:for="{{item.list}}" wx:key="i" catchtap='selectCity' wx:for-index="i" wx:for-item="it" data-city='{{it}}'>
+        {{it.name}}
+      </view>
+    </i-index-item>
+  </i-index>
+</view>

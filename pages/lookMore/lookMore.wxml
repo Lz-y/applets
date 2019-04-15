@@ -1,0 +1,9 @@
+<view class='container'>
+  <view class='list'>
+    <view class='item' wx:for='{{list}}' wx:key='index' data-postid='{{item.post_id}}' catchtap='toDetail'>
+      <image class='pt-img' src='{{item.image}}'></image>
+      <text class='title'>{{item.title}}</text>
+      <text class='subTitle'>{{item.sub_title}}</text>
+    </view>
+  </view>
+</view>

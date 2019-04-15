@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/post/post",
+    "pages/my/my",
+    "pages/login/login",
+    "pages/setting/setting",
+    "pages/self/self",
+    "pages/collect/collect",
+    "pages/record/record",
+    "pages/apply/apply",
+    "pages/detail/detail",
+    "pages/address/address",
+    "pages/cityList/cityList",
+    "pages/lookMore/lookMore",
+    "pages/feedback/feedback"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "开心兼职",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "color": "#828482",
+    "selectedColor": "#828482",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/indexs.png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "岗位",
+        "iconPath": "images/post.png",
+        "selectedIconPath": "images/posts.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/mys.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "debug": true
+}

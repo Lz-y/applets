@@ -1,0 +1,9 @@
+<view class='swiper'>
+  <swiper indicator-dots='{{showDot}}' autoplay="{{autoplay}}" circular="{{circular}}" interval='{{duration}}' indicator-active-color='{{activeColor}}' style='height:150px'>
+    <block wx:for='{{data}}' wx:key='index'>
+      <swiper-item>
+        <image src='{{item}}' lazy-load='{{lazyLoad}}' mode='widthFix' style='width:{{width}}px;height:100%;'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

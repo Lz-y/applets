@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "i-icon": "../../components/dist/icon/index"
+  },
+  "navigationBarTitleText": "我的收藏"
+}

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "i-button": "../../components/dist/button/index",
+    "i-input": "../../components/dist/input/index",
+    "i-icon": "../../components/dist/icon/index",
+    "swiper-image": "../../components/swiper/swiperArea",
+    "i-panel": "../../components/dist/panel/index",
+    "i-card": "../../components/dist/card/index"
+  }
+}

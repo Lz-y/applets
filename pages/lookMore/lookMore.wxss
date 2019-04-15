@@ -1,0 +1,36 @@
+.list{
+  padding:12px 10px;
+  box-sizing:border-box;
+  overflow:hidden;
+}
+.item{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  font-size:14px;
+  float:left;
+  margin:4px 8px;
+  text-align:center;
+}
+.pt-img{
+  max-width: 160px;
+  max-height: 90px;
+  min-height:70px;
+}
+.title{
+  width:120px;
+  line-height:24px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.subTitle{
+  font-size:12px;
+  width:140px;
+  line-height:1.5;
+  color:#666;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}

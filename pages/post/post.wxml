@@ -1,0 +1,108 @@
+<view class='container'>
+  <!-- 标签栏 -->
+  <i-tabs current="{{current}}" color="#0c8" bindchange="handleChange">
+    <i-tab key="all" title="全部兼职"></i-tab>
+    <i-tab key="online" title="线上兼职"></i-tab>
+  </i-tabs>
+  <!-- 图标区域 -->
+  <view class="icon-list" wx:if="{{icons.length!==0}}">
+    <view class="icons" wx:if='{{current==="all"}}'>
+      <view bindtap="universalJump" class="icon-item" data-title="{{item.title}}" wx:for="{{icons}}" wx:key="{{index}}">
+        <image class="icon-image" src="{{item.image}}"></image>
+        <view class="icon-name">{{item.title}}</view>
+      </view>
+    </view>
+    <view class="icons" wx:else>
+      <view bindtap="universalJump" class="icon-item" data-title="{{item.title}}" wx:for="{{icons}}" wx:key="{{index}}">
+        <image class="icon-image" src="{{item.image}}"></image>
+        <view class="icon-name">{{item.title}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- 选择岗位，排序以及筛选 -->
+  <view class="navbar {{isFixed?'fixed':''}}">
+    <view bindtap="changeActiveNav" class="navtop leftNavTop {{navActive===1?'isActive':''}}" data-index="1">
+      <text>{{classificationName}}</text>
+      <i-icon type='{{navActive===1?"packup":"unfold"}}'></i-icon>
+    </view>
+    <view bindtap="changeActiveNav" class="navtop leftNavTop {{navActive===2?'isActive':''}}" data-index="2">
+      <text>{{sortRuleName}}</text>
+      <i-icon type='{{navActive===2?"packup":"unfold"}}'></i-icon>
+    </view>
+    <view bindtap="changeActiveNav" class="navtop rightNavTop {{navActive===3?'isActive':''}}" data-index="3">
+      <i-icon type='filter'></i-icon>
+      <text>筛选</text>
+    </view>
+  </view>
+  <!-- 条件选择区域 -->
+  <view catchtouchmove="preventTouchMove" class="nav-dialog" wx:if="{{navActive===1||navActive===2||navActive===3}}">
+    <view bindtap="closeNav" class="navBg" wx:if="{{navActive!==0}}"></view>
+    <view class="subNavModal1" wx:if="{{navActive===1}}">
+      <scroll-view class="first_classify" scrollY="true" style="height: 100%;">
+        <view bindtap="getSecondTitle" class="{{firstTag===index?'isActive':''}}" data-index="{{index}}" data-title="{{item.title}}" style="text-align: center" wx:for="{{classifications}}"
+          wx:key="{{index}}">{{item.title}}</view>
+      </scroll-view>
+      <view class="second_classify" style="height: 100%;">
+        <view bindtap="clickSecondClassification" class="{{secondTag===index?'isSubActive':''}}" data-index="{{index}}" data-subtitle="{{item}}" wx:for="{{secondTitle}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+    </view>
+    <view class="subNavModal2" wx:if="{{navActive===2}}">
+      <view class="sortList" style="height: 100%;">
+        <view bindtap="addSorts" class="{{sortRuleTag===index?'isActive':''}}" data-index="{{index}}" data-name="{{item.value}}" data-sortid="{{item.key}}" wx:for="{{sortRules}}" wx:key="{{index}}">{{item.value}}</view>
+      </view>
+    </view>
+    <view class="subNavModal3" wx:if="{{navActive===3}}">
+      <scroll-view scrollY="true" style="height:360px;margin:0 12px;">
+        <view class="area">
+          <view class="subtitle">工作时长</view>
+          <view bindtap="changeTimeFlag" class="filterli {{item.key === filter.time?'isArea':''}}" data-time="{{item.key}}" wx:for="{{time}}" wx:key="{{index}}">{{item.value}}</view>
+        </view>
+        <view class="payMethod">
+          <view class="subtitle">结算方式</view>
+          <view bindtap="changePayFlag" class="filterli {{item.key === filter.pay?'isArea':''}}" data-key="{{item.key}}" wx:for="{{payment}}" wx:key="{{index}}">{{item.value}}</view>
+        </view>
+        <view class="gender">
+          <view class="subtitle">性别要求</view>
+          <i-radio-group current="{{filter.gender}}" bindchange='chooseGengerFilter'>
+            <i-radio color='#0c8' value="9" label='不限'></i-radio>
+            <i-radio color='#0c8' value="0" label='男生可做'></i-radio>
+            <i-radio color='#0c8' value="1" label='女生可做'></i-radio>
+          </i-radio-group>
+        </view>
+        <!-- <view class="payMethod">
+          <view class="subtitle">其它条件</view>
+          <view bindtap="changeWeekendFlag" class="filterli {{filter.other?'isArea':''}}">周末兼职</view>
+        </view> -->
+      </scroll-view>
+      <view class="filterBtns">
+        <view bindtap="resetFilter" class="resetBtn">重置</view>
+        <view bindtap="submitFilter" class="submitBtn">确定</view>
+      </view>
+    </view>
+  </view>
+  <!-- 没有数据 -->
+  <view class="noneList" wx:if='{{jobs.length === 0}}'>
+    <image mode="aspectFit" src="https://qiniu-image.qtshe.com/20161007search@3x.png"></image>
+    <text>暂无相关兼职哦</text>
+  </view>
+  <!-- 部分数据 -->
+  <view class="jobs-list" wx:else>
+    <view class="pt-jobs-item" wx:for="{{jobs}}" wx:key="{{index}}" data-jobid="{{item.post_id}}" catchtap='toDetail'>
+      <image src="{{item.image||'http://ku.90sjimg.com/element_pic/17/02/05/9f0b35e34d2b1dc278df890bc2a3dba4.jpg'}}" mode='aspectFit' style='height:70px;width:70px;float:left'></image>
+      <view class="pt-title">
+        <text class='title'>{{item.title}}</text>
+        <text class='price'>{{item.salary}}</text>
+      </view>
+      <view class="pt-detail" style='overflow:hidden'>
+        <view class='pt-time'>
+          <i-icon type='time_fill' size='16'></i-icon>
+          <text>{{item.job_date||'不限工作时间'}}</text>
+        </view>
+        <view class='pt-location'>
+          <i-icon type='coordinates_fill' size='16'></i-icon>
+          <text>{{item.job_address||'不限工作地点'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

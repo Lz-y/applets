@@ -1,0 +1,18 @@
+<view class='container'>
+  <i-panel title='账号和安全' i-class='pt-panel'>
+    <view class='pt-content'>
+      <i-cell-group i-class='pt-list'>
+        <i-cell title="{{user.account}}" is-link></i-cell>
+        <i-cell title="{{psw}}" value='更改密码' is-link bind:click='showModel'></i-cell>
+      </i-cell-group>
+    </view>
+  </i-panel>
+  <i-cell-group i-class='pt-list'>
+    <i-cell title="授权设置" is-link bind:click='openSetting'></i-cell>
+  </i-cell-group>
+  <i-button i-class='pt-button' type="warning" size="small" bind:click='logout'>退出登录</i-button>
+  <i-modal title='修改密码' visible="{{visible}}" bind:ok="save" bind:cancel="close">
+    <i-input title='新密码' type='password' value="{{user.psw}}" maxlength='200' placeholder="请输入密码" style='text-align:left' bind:change='inputPsw'/>
+  </i-modal>
+  <i-toast id='toast'></i-toast>
+</view>
